@@ -122,13 +122,14 @@ void free_tokens(char **tokens)
 {
     int i = 0;
 start_free_tokens:
-    if (tokens[i] == 0)
+    if (tokens == 0)
     {
         free(tokens); // Free the token array itself
         return;
     }
-    free(tokens[i]);
-    tokens[i] = 0; // Nullify the pointer after freeing
+    if (tokens[i])
+        free(tokens[i]);
+
     i++;
     goto start_free_tokens;
 }

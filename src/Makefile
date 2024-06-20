@@ -4,7 +4,7 @@ SRCS = uimain.c tokenizer.c history.c
 # Define the object files derived from source files
 OBJS = $(SRCS:.c=.o)
 
-# Define the program name
+# !Define the program name
 PROGRAM_NAME = target
 
 # Compilation flags
@@ -19,7 +19,7 @@ $(PROGRAM_NAME): $(OBJS)
 
 # Pattern rule to compile any .c file into corresponding .o file
 %.o: %.c
-	cc -c $(CFLAGS) $< -o $@
+	cc -c $(CFLAGS) $< 
 
 # Individual dependencies for object files with header files
 tokenizer.o: tokenizer.h
